@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+ 
+<!-- The cub doesn't really have an electrical system but let's give -->
+<!-- it a little bit of something since we don't have a virtual ground -->
+<!-- crew to go out and flip the prop for us. -->
+
+<PropertyList>
+
+  <!-- Supplier list -->
+
+  <supplier>
+    <name>Battery</name>
+    <prop>/systems/electrical/suppliers/battery[0]</prop>
+    <kind>battery</kind>
+    <volts>40</volts>
+    <amps>200</amps>
+  </supplier>
+
+  <!-- Bus list -->
+
+  <bus>
+    <name>Master Bus</name>
+    <prop>/systems/electrical/outputs/bus[0]</prop>
+  </bus>
+
+  <!-- Generic Outputs -->
+
+<!--  <output>
+    <name>Starter 1 Power</name>
+    <prop>/systems/electrical/outputs/starter[0]</prop>
+  </output>
+
+  <output>
+    <name>Pitot Heat Power</name>
+    <prop>/systems/electrical/outputs/pitot-heat</prop>
+  </output>-->
+
+
+  <!-- connect in power sources -->
+
+<!--  <connector>
+    <input>Battery 1</input>
+    <output>Master Bus</output>
+    <switch>
+      <prop>/controls/engines/engine[0]/master-bat</prop>
+    </switch>
+  </connector>-->
+
+  <!-- connect master bus outputs -->
+
+<!--  <connector>
+    <input>Master Bus</input>
+    <output>Pitot Heat Power</output>
+    <switch>
+      <prop>/controls/switches/pitot-heat</prop>
+    </switch>
+  </connector>-->
+
+</PropertyList>

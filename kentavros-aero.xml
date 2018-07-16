@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<aerodynamics>
+	<function name="aero/function/left-prop-zr">
+		<description>height of the left propeller divided by its radius</description>
+		<quotient>
+			<sum>
+				<product>
+					<property>position/h-agl-ft</property>
+					<value>0.3048</value> <!-- feet to meters -->
+				</product>
+				<product>
+					<value>1.5</value> <!-- propeller arm -->
+					<sin><property>attitude/roll-rad</property></sin>
+				</product>
+			</sum>
+			<value>0.93</value> <!-- propeller radius -->
+		</quotient>
+	</function>
+
+	<function name="aero/function/right-prop-zr">
+		<description>height of the left propeller divided by its radius</description>
+		<quotient>
+			<sum>
+				<product>
+					<property>position/h-agl-ft</property>
+					<value>0.3048</value> <!-- feet to meters -->
+				</product>
+				<product>
+					<value>-1.5</value> <!-- propeller arm -->
+					<sin><property>attitude/roll-rad</property></sin>
+				</product>
+			</sum>
+			<value>0.93</value> <!-- propeller radius -->
+		</quotient>
+	</function>
+
+	<axis name="LIFT">
+	</axis>
+
+	<axis name="DRAG">
+		<function name="aero/force/drag">
+			<description>Drag</description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<value>10.76</value>
+				<value>10.0</value>
+			</product>
+		</function>
+	</axis>
+
+	<axis name="SIDE">
+	</axis>
+
+	<axis name="ROLL">
+		<function name="aero/force/rolldamp">
+			<description>Roll_moment_due_to_roll_rate_(roll_damping)</description>
+			<product>
+				<property>velocities/p-aero-rad_sec</property>
+				<value>-0.02</value>
+			</product>
+		</function>
+	</axis> 
+
+	<axis name="PITCH">
+		<function name="aero/force/pitchdamp">
+			<description>Pitch_moment_due_to_pitch_rate</description>
+			<product>
+				<property>velocities/q-aero-rad_sec</property>
+				<value>-0.01</value>
+			</product>
+		</function>
+	</axis>
+
+	<axis name="YAW">
+		<function name="aero/force/yawdamp">
+			<description>Yaw_moment_due_to_yaw_rate</description>
+			<product>
+				<property>velocities/r-aero-rad_sec</property>
+				<value>-0.02</value>
+			</product>
+		</function>
+
+		<function name="aero/force/yawcontrol">
+			<description>Yaw_moment_due_to_flaps_deflection</description>
+			<product>
+				<value>2</value>
+				<value>2.5</value>
+				<value>0.1</value>
+				<property>fcs/rudder-pos-rad</property>
+				<property>propulsion/engine/prop-induced-velocity_fps</property>
+				<property>propulsion/engine/prop-induced-velocity_fps</property>
+				<value>-0.1</value>
+			</product>
+		</function>
+	</axis>
+
+</aerodynamics>

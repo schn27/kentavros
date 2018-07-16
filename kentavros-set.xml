@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>
+	<description>Kentavros UAV (JSBSim)</description>
+	<author>Aleksandr Malikov</author>
+	<status>development</status>
+	<rating>
+		<FDM type="int">2</FDM>
+		<systems type="int">0</systems>
+		<cockpit type="int">0</cockpit>
+		<model type="int">3</model>
+	</rating>
+	<startup>
+		<splash-texture>Aircraft/kentavros/kentavros.png</splash-texture>
+	</startup>
+	<flight-model>jsb</flight-model>
+	<model-hz>120</model-hz>
+	<aero>kentavros-jsbsim</aero>
+	<model>
+		<path>Aircraft/kentavros/Models/kentavros-model.xml</path>
+	</model>
+
+	<systems>
+		<electrical>
+			<path>Aircraft/kentavros/electrical.xml</path>
+		</electrical>
+	</systems>
+
+	<panel>
+		<visibility>false</visibility>
+	</panel>
+
+	<chase-distance-m>-3</chase-distance-m>
+
+	<view n="0">
+		<name>Frontal Camera</name>
+		<type>lookfrom</type>
+		<internal type="bool">false</internal>
+		<config>
+			<dynamic-view type="bool">true</dynamic-view>
+			<x-offset-m type="double"> 0.0</x-offset-m>
+			<y-offset-m type="double"> 0.0</y-offset-m>
+			<z-offset-m type="double"> 0.0</z-offset-m>
+			<pitch-offset-deg type="double">0.0</pitch-offset-deg>
+			<default-field-of-view type="double">60.0</default-field-of-view>
+		</config>
+	</view>
+
+	<view n="1">
+		<config>
+			<target-z-offset-m archive="y" type="double">0.9</target-z-offset-m>
+		</config>
+	</view>
+
+	<view n="2">
+		<config>
+			<target-z-offset-m archive="y" type="double">0.9</target-z-offset-m>
+		</config>
+	</view>
+
+	<view n="3">
+		<config>
+			<target-z-offset-m archive="y" type="double">0.9</target-z-offset-m>
+		</config>
+	</view>
+
+	<view n="4">
+		<config>
+			<target-z-offset-m archive="y" type="double">0.9</target-z-offset-m>
+		</config>
+	</view>
+
+	<view n="5">
+		<config>
+			<target-z-offset-m archive="y" type="double">0.9</target-z-offset-m>
+		</config>
+	</view>
+
+	<view n="6">
+		<config>
+			<target-z-offset-m archive="y" type="double">0.9</target-z-offset-m>
+		</config>
+	</view>
+
+	<view n="7">
+		<config>
+			<target-z-offset-m archive="y" type="double">0.9</target-z-offset-m>
+		</config>
+	</view>	
+</sim>
+
+</PropertyList>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+<path>kentavros-model.ac</path>
+
+<animation>
+	<type>spin</type>
+	<object-name>prop.fr</object-name>
+	<property>engines/engine[0]/rpm</property>
+	<factor>1</factor>
+	<center>
+		<x-m> 0.312</x-m>
+		<y-m> 0.749</y-m>
+		<z-m> 0.183</z-m>
+	</center>
+	<axis>
+		<x> 0</x>
+		<y> 0</y>
+		<z> 1</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>spin</type>
+	<object-name>prop.rl</object-name>
+	<property>engines/engine[1]/rpm</property>
+	<factor>1</factor>
+	<center>
+		<x-m> 2.077</x-m>
+		<y-m>-0.518</y-m>
+		<z-m> 0.222</z-m>
+	</center>
+	<axis>
+		<x> 0</x>
+		<y> 0</y>
+		<z> 1</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>spin</type>
+	<object-name>prop.fl</object-name>
+	<property>engines/engine[2]/rpm</property>
+	<factor>1</factor>
+	<center>
+		<x-m> 0.312</x-m>
+		<y-m>-0.749</y-m>
+		<z-m> 0.183</z-m>
+	</center>
+	<axis>
+		<x> 0</x>
+		<y> 0</y>
+		<z>-1</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>spin</type>
+	<object-name>prop.rr</object-name>
+	<property>engines/engine[3]/rpm</property>
+	<factor>1</factor>
+	<center>
+		<x-m> 2.077</x-m>
+		<y-m> 0.518</y-m>
+		<z-m> 0.222</z-m>
+	</center>
+	<axis>
+		<x> 0</x>
+		<y> 0</y>
+		<z>-1</z>
+	</axis>
+</animation>
+
+</PropertyList>
