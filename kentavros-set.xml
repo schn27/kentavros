@@ -6,7 +6,7 @@
 	<author>Aleksandr Malikov</author>
 	<status>development</status>
 	<rating>
-		<FDM type="int">2</FDM>
+		<FDM type="int">3</FDM>
 		<systems type="int">0</systems>
 		<cockpit type="int">0</cockpit>
 		<model type="int">3</model>
@@ -15,7 +15,7 @@
 		<splash-texture>Aircraft/kentavros/kentavros.png</splash-texture>
 	</startup>
 	<flight-model>jsb</flight-model>
-	<model-hz>120</model-hz>
+	<model-hz>500</model-hz>
 	<aero>kentavros-jsbsim</aero>
 	<model>
 		<path>Aircraft/kentavros/Models/kentavros-model.xml</path>
@@ -89,5 +89,21 @@
 		</config>
 	</view>	
 </sim>
+
+<engines>
+	<engine>
+		<rpm type="double">400</rpm>
+	</engine>
+	<engine n="1">
+		<rpm type="double">400</rpm>
+	</engine>
+	<engine n="2">
+		<rpm type="double">400</rpm>
+	</engine>
+	<engine n="3">
+		<rpm type="double">400</rpm>
+	</engine>
+</engines>
+
 
 </PropertyList>
