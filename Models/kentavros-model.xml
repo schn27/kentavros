@@ -3,6 +3,28 @@
 
 <path>kentavros-model.ac</path>
 
+<!-- front right nacelle -->
+
+<animation>
+	<type>rotate</type>
+	<object-name>prop.fr</object-name>
+	<object-name>motor.fr</object-name>
+	<object-name>nacelle.fr</object-name>
+	<property>/fdm/jsbsim/propulsion/engine/pitch-angle-rad</property>
+	<factor>57.29578</factor>
+	<offset-deg>-90</offset-deg>
+	<center>
+		<x-m> 0.312</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.054</z-m>
+	</center>
+	<axis>
+		<x> 0</x>
+		<y> 1</y>
+		<z> 0</z>
+	</axis>
+</animation>
+
 <animation>
 	<type>spin</type>
 	<object-name>prop.fr</object-name>
@@ -17,6 +39,28 @@
 		<x> 0</x>
 		<y> 0</y>
 		<z> 1</z>
+	</axis>
+</animation>
+
+<!-- rear left nacelle -->
+
+<animation>
+	<type>rotate</type>
+	<object-name>prop.rl</object-name>
+	<object-name>motor.rl</object-name>
+	<object-name>nacelle.rl</object-name>
+	<property>/fdm/jsbsim/propulsion/engine[1]/pitch-angle-rad</property>
+	<factor>57.29578</factor>
+	<offset-deg>-90</offset-deg>
+	<center>
+		<x-m> 2.077</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.093</z-m>
+	</center>
+	<axis>
+		<x> 0</x>
+		<y> 1</y>
+		<z> 0</z>
 	</axis>
 </animation>
 
@@ -37,6 +81,28 @@
 	</axis>
 </animation>
 
+<!-- front left nacelle -->
+
+<animation>
+	<type>rotate</type>
+	<object-name>prop.fl</object-name>
+	<object-name>motor.fl</object-name>
+	<object-name>nacelle.fl</object-name>
+	<property>/fdm/jsbsim/propulsion/engine[2]/pitch-angle-rad</property>
+	<factor>57.29578</factor>
+	<offset-deg>-90</offset-deg>
+	<center>
+		<x-m> 0.312</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.054</z-m>
+	</center>
+	<axis>
+		<x> 0</x>
+		<y> 1</y>
+		<z> 0</z>
+	</axis>
+</animation>
+
 <animation>
 	<type>spin</type>
 	<object-name>prop.fl</object-name>
@@ -51,6 +117,28 @@
 		<x> 0</x>
 		<y> 0</y>
 		<z>-1</z>
+	</axis>
+</animation>
+
+<!-- rear right nacelle -->
+
+<animation>
+	<type>rotate</type>
+	<object-name>prop.rr</object-name>
+	<object-name>motor.rr</object-name>
+	<object-name>nacelle.rr</object-name>
+	<property>/fdm/jsbsim/propulsion/engine[3]/pitch-angle-rad</property>
+	<factor>57.29578</factor>
+	<offset-deg>-90</offset-deg>
+	<center>
+		<x-m> 2.077</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.093</z-m>
+	</center>
+	<axis>
+		<x> 0</x>
+		<y> 1</y>
+		<z> 0</z>
 	</axis>
 </animation>
 

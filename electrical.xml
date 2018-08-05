@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
  
-<!-- The cub doesn't really have an electrical system but let's give -->
-<!-- it a little bit of something since we don't have a virtual ground -->
-<!-- crew to go out and flip the prop for us. -->
-
 <PropertyList>
 
   <!-- Supplier list -->

@@ -1,40 +1,6 @@
 <?xml version="1.0"?>
 
 <aerodynamics>
-	<function name="aero/function/left-prop-zr">
-		<description>height of the left propeller divided by its radius</description>
-		<quotient>
-			<sum>
-				<product>
-					<property>position/h-agl-ft</property>
-					<value>0.3048</value> <!-- feet to meters -->
-				</product>
-				<product>
-					<value>1.5</value> <!-- propeller arm -->
-					<sin><property>attitude/roll-rad</property></sin>
-				</product>
-			</sum>
-			<value>0.93</value> <!-- propeller radius -->
-		</quotient>
-	</function>
-
-	<function name="aero/function/right-prop-zr">
-		<description>height of the left propeller divided by its radius</description>
-		<quotient>
-			<sum>
-				<product>
-					<property>position/h-agl-ft</property>
-					<value>0.3048</value> <!-- feet to meters -->
-				</product>
-				<product>
-					<value>-1.5</value> <!-- propeller arm -->
-					<sin><property>attitude/roll-rad</property></sin>
-				</product>
-			</sum>
-			<value>0.93</value> <!-- propeller radius -->
-		</quotient>
-	</function>
-
 	<axis name="LIFT">
 	</axis>
 
@@ -44,7 +10,7 @@
 			<product>
 				<property>aero/qbar-psf</property>
 				<value>10.76</value>
-				<value>10.0</value>
+				<value>1.0</value>
 			</product>
 		</function>
 	</axis>
@@ -57,7 +23,7 @@
 			<description>Roll_moment_due_to_roll_rate_(roll_damping)</description>
 			<product>
 				<property>velocities/p-aero-rad_sec</property>
-				<value>-0.02</value>
+				<value>-0.002</value>
 			</product>
 		</function>
 	</axis> 
@@ -67,7 +33,7 @@
 			<description>Pitch_moment_due_to_pitch_rate</description>
 			<product>
 				<property>velocities/q-aero-rad_sec</property>
-				<value>-0.01</value>
+				<value>-0.001</value>
 			</product>
 		</function>
 	</axis>
@@ -77,20 +43,7 @@
 			<description>Yaw_moment_due_to_yaw_rate</description>
 			<product>
 				<property>velocities/r-aero-rad_sec</property>
-				<value>-0.02</value>
-			</product>
-		</function>
-
-		<function name="aero/force/yawcontrol">
-			<description>Yaw_moment_due_to_flaps_deflection</description>
-			<product>
-				<value>2</value>
-				<value>2.5</value>
-				<value>0.1</value>
-				<property>fcs/rudder-pos-rad</property>
-				<property>propulsion/engine/prop-induced-velocity_fps</property>
-				<property>propulsion/engine/prop-induced-velocity_fps</property>
-				<value>-0.1</value>
+				<value>-0.001</value>
 			</product>
 		</function>
 	</axis>

@@ -11,14 +11,14 @@
 </fileheader>
 
 <metrics>
-	<wingarea  unit="M2">   0.1 </wingarea>
-	<wingspan  unit="M" >   1.0 </wingspan>
+	<wingarea  unit="M2">   0.8 </wingarea>
+	<wingspan  unit="M" >   3.0 </wingspan>
 	<wing_incidence>        0.1 </wing_incidence>
-	<chord     unit="M" >   1.0 </chord>
-	<htailarea unit="FT2">  0.1 </htailarea>
-	<htailarm  unit="FT" >  1.0 </htailarm>
-	<vtailarea unit="FT2">  0.1 </vtailarea>
-	<vtailarm  unit="FT" >  1.0 </vtailarm>
+	<chord     unit="M" >   0.3 </chord>
+	<htailarea unit="FT2">  1.0 </htailarea>
+	<htailarm  unit="FT" >  0.1 </htailarm>
+	<vtailarea unit="FT2">  1.0 </vtailarea>
+	<vtailarm  unit="FT" >  0.1 </vtailarm>
 	<location name="AERORP" unit="M">
 		<x> 0.92</x>
 		<y> 0</y>
@@ -204,10 +204,10 @@
 		<location unit="M">
 			<x> 0.312</x>
 			<y> 0.749</y>
-			<z> 0.183</z>
+			<z> 0.054</z>
 		</location>
 		<orient unit="DEG">
-			<pitch> 90</pitch>
+			<pitch> 0</pitch>
 			<roll>  0</roll>
 			<yaw>   0</yaw>
 		</orient>
@@ -216,7 +216,7 @@
 			<location unit="M">
 				<x> 0.312</x>
 				<y> 0.749</y>
-				<z> 0.183</z>
+				<z> 0.054</z>
 			</location>
 			<orient unit="DEG">
 				<pitch> 90</pitch>
@@ -230,10 +230,10 @@
 		<location unit="M">
 			<x> 2.077</x>
 			<y>-0.518</y>
-			<z> 0.222</z>
+			<z> 0.093</z>
 		</location>
 		<orient unit="DEG">
-			<pitch> 90</pitch>
+			<pitch> 0</pitch>
 			<roll>  0</roll>
 			<yaw>   0</yaw>
 		</orient>
@@ -242,7 +242,7 @@
 			<location unit="M">
 				<x> 2.077</x>
 				<y>-0.518</y>
-				<z> 0.222</z>
+				<z> 0.093</z>
 			</location>
 			<orient unit="DEG">
 				<pitch> 90</pitch>
@@ -256,10 +256,10 @@
 		<location unit="M">
 			<x> 0.312</x>
 			<y>-0.749</y>
-			<z> 0.183</z>
+			<z> 0.054</z>
 		</location>
 		<orient unit="DEG">
-			<pitch> 90</pitch>
+			<pitch> 0</pitch>
 			<roll>  0</roll>
 			<yaw>   0</yaw>
 		</orient>
@@ -268,7 +268,7 @@
 			<location unit="M">
 				<x> 0.312</x>
 				<y>-0.749</y>
-				<z> 0.183</z>
+				<z> 0.054</z>
 			</location>
 			<orient unit="DEG">
 				<pitch> 90</pitch>
@@ -282,10 +282,10 @@
 		<location unit="M">
 			<x> 2.077</x>
 			<y> 0.518</y>
-			<z> 0.222</z>
+			<z> 0.093</z>
 		</location>
 		<orient unit="DEG">
-			<pitch> 90</pitch>
+			<pitch> 0</pitch>
 			<roll>  0</roll>
 			<yaw>   0</yaw>
 		</orient>
@@ -294,7 +294,7 @@
 			<location unit="M">
 				<x> 2.077</x>
 				<y> 0.518</y>
-				<z> 0.222</z>
+				<z> 0.093</z>
 			</location>
 			<orient unit="DEG">
 				<pitch> 90</pitch>
@@ -307,8 +307,120 @@
 
 
 <!-- *************************** CONTROLS ********************************** -->
-<!-- TODO -->
 <flight_control name="FCS: kentavros">
+	<channel name="Yaw">
+		<kinematic name="fcs/nacelle-cmd-norm-filtered">
+			<input>fcs/nacelle-cmd-norm</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.2</time>
+				</setting>
+			</traverse>
+		</kinematic>
+
+		<aerosurface_scale name="fcs/nacelle-angle-rad">
+			<input>fcs/nacelle-cmd-norm-filtered</input>
+			<zero_centered>false</zero_centered>
+			<domain>
+				<min>0</min>
+				<max>1</max>
+			</domain>
+			<range>
+				<min>1.65</min>
+				<max>0.08</max>
+			</range>
+			<output>propulsion/engine/pitch-angle-rad</output>
+		</aerosurface_scale>
+
+		<kinematic name="fcs/nacelle-cmd-norm-filtered[1]">
+			<input>fcs/nacelle-cmd-norm[1]</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.2</time>
+				</setting>
+			</traverse>
+		</kinematic>
+
+		<aerosurface_scale name="fcs/nacelle-angle-rad[1]">
+			<input>fcs/nacelle-cmd-norm-filtered[1]</input>
+			<zero_centered>false</zero_centered>
+			<domain>
+				<min>0</min>
+				<max>1</max>
+			</domain>
+			<range>
+				<min>1.65</min>
+				<max>0.08</max>
+			</range>
+			<output>propulsion/engine[1]/pitch-angle-rad</output>
+		</aerosurface_scale>
+
+		<kinematic name="fcs/nacelle-cmd-norm-filtered[2]">
+			<input>fcs/nacelle-cmd-norm[2]</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.2</time>
+				</setting>
+			</traverse>
+		</kinematic>
+
+		<aerosurface_scale name="fcs/nacelle-angle-rad[2]">
+			<input>fcs/nacelle-cmd-norm-filtered[2]</input>
+			<zero_centered>false</zero_centered>
+			<domain>
+				<min>0</min>
+				<max>1</max>
+			</domain>
+			<range>
+				<min>1.65</min>
+				<max>0.08</max>
+			</range>
+			<output>propulsion/engine[2]/pitch-angle-rad</output>
+		</aerosurface_scale>
+
+		<kinematic name="fcs/nacelle-cmd-norm-filtered[3]">
+			<input>fcs/nacelle-cmd-norm[3]</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.2</time>
+				</setting>
+			</traverse>
+		</kinematic>
+
+		<aerosurface_scale name="fcs/nacelle-angle-rad[3]">
+			<input>fcs/nacelle-cmd-norm-filtered[3]</input>
+			<zero_centered>false</zero_centered>
+			<domain>
+				<min>0</min>
+				<max>1</max>
+			</domain>
+			<range>
+				<min>1.65</min>
+				<max>0.08</max>
+			</range>
+			<output>propulsion/engine[3]/pitch-angle-rad</output>
+		</aerosurface_scale>		
+	</channel>
 </flight_control>
 
 <aerodynamics file="kentavros-aero.xml"/>

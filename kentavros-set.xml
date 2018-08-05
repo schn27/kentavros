@@ -15,7 +15,7 @@
 		<splash-texture>Aircraft/kentavros/kentavros.png</splash-texture>
 	</startup>
 	<flight-model>jsb</flight-model>
-	<model-hz>500</model-hz>
+	<model-hz>700</model-hz>
 	<aero>kentavros-jsbsim</aero>
 	<model>
 		<path>Aircraft/kentavros/Models/kentavros-model.xml</path>
@@ -105,5 +105,10 @@
 	</engine>
 </engines>
 
+<nasal>
+	<nacelles>
+		<file>Aircraft/kentavros/Nasal/nacelles.nas</file>
+	</nacelles>
+</nasal>
 
 </PropertyList>
