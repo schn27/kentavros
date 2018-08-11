@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>Kentavros Hud</name>
+
+	<import>
+		<path>Huds/Instruments/compass.xml</path>
+		<y-offset>190</y-offset>
+	</import>
+
+	<import>
+		<path>Huds/Instruments/ladder.xml</path>
+	</import>
+	
+	<import>
+		<path>Huds/Instruments/latitude.xml</path>
+		<x-offset>-210</x-offset>
+		<y-offset>190</y-offset>
+	</import>
+
+	<import>
+		<path>Huds/Instruments/longitude.xml</path>
+		<x-offset>-210</x-offset>
+		<y-offset>180</y-offset>
+	</import>
+
+	<label>
+		<name>GS</name>
+		<x>-280</x>
+		<y>101</y>
+		<width>28</width>
+		<height>12</height>
+		<format>%3.1f</format>
+		<halign>right</halign>
+		<box>true</box>
+		<input>
+			<property>/velocities/groundspeed-kt</property>
+			<factor>0.514444</factor>
+		</input>
+	</label>
+
+	<tape>
+		<name>KIAS</name>
+		<x>-280</x>
+		<y>-100</y>
+		<width>28</width>
+		<height>200</height>
+		<option>right</option>
+		<option>vertical</option>
+		<major-divisions>10</major-divisions>
+		<minor-divisions>5</minor-divisions>
+		<display-span>50.0</display-span>
+		<tick-bottom>true</tick-bottom>
+		<tick-top>true</tick-top>
+		<tick-right>false</tick-right>
+		<tick-left>false</tick-left>
+		<cap-bottom>false</cap-bottom>
+		<cap-top>false</cap-top>
+		<cap-right>false</cap-right>
+		<cap-left>true</cap-left>
+		<marker-offset>0.0</marker-offset>
+		<enable-pointer>true</enable-pointer>
+		<pointer-type>fixed</pointer-type>
+		<tick-type>line</tick-type>
+		<tick-length>variable</tick-length>
+		<input>
+			<property>/velocities/airspeed-kt</property>
+			<factor>0.514444</factor>
+			<min>0.0</min>
+		</input>
+	</tape>
+
+	<tape>
+		<name>AMSL</name>
+		<x>245</x>
+		<y>-100</y>
+		<width>35</width>
+		<height>200</height>
+		<option>left</option>
+		<option>vertical</option>
+		<major-divisions>100</major-divisions>
+		<minor-divisions>25</minor-divisions>
+		<display-span>250.0</display-span>
+		<tick-bottom>true</tick-bottom>
+		<tick-top>true</tick-top>
+		<tick-right>false</tick-right>
+		<tick-left>false</tick-left>
+		<cap-bottom>false</cap-bottom>
+		<cap-top>false</cap-top>
+		<cap-right>true</cap-right>
+		<cap-left>false</cap-left>
+		<marker-offset>0.0</marker-offset>
+		<enable-pointer>true</enable-pointer>
+		<pointer-type>fixed</pointer-type>
+		<tick-type>line</tick-type>
+		<tick-length>variable</tick-length>
+		<input>
+			<property>/position/altitude-ft</property>
+			<factor>0.3048</factor>
+		</input>
+	</tape>
+
+	<label>
+		<name>VerticalSpeed</name>
+		<x>220</x>
+		<y>-6</y>
+		<width>28</width>
+		<height>12</height>
+		<format>%3.1f</format>
+		<halign>right</halign>
+		<box>true</box>
+		<input>
+			<property>/velocities/vertical-speed-fps</property>
+			<factor>0.3048</factor>
+		</input>
+	</label>
+
+	<tape>
+		<name>RadioAltimeter</name>
+		<x>118</x>
+		<y>-75</y>
+		<width>25</width>
+		<height>150</height>
+		<option>left</option>
+		<option>vertical</option>
+		<major-divisions>1</major-divisions>
+		<minor-divisions>0.2</minor-divisions>
+		<display-span>10.0</display-span>
+		<tick-bottom>true</tick-bottom>
+		<tick-top>true</tick-top>
+		<tick-right>false</tick-right>
+		<tick-left>false</tick-left>
+		<cap-bottom>false</cap-bottom>
+		<cap-top>false</cap-top>
+		<cap-right>true</cap-right>
+		<cap-left>false</cap-left>
+		<marker-offset>0.0</marker-offset>
+		<enable-pointer>true</enable-pointer>
+		<pointer-type>fixed</pointer-type>
+		<tick-type>line</tick-type>
+		<tick-length>variable</tick-length>
+		<input>
+			<property>/position/altitude-agl-ft</property>
+			<factor>0.3048</factor>
+			<min>0.0</min>
+		</input>
+	</tape>
+
+	<label>
+		<name>FlRpm</name>
+		<x>160</x>
+		<y>190</y>
+		<width>50</width>
+		<height>12</height>
+		<format>%4.0f RPM</format>
+		<halign>right</halign>
+		<box>true</box>
+		<input>
+			<property>/engines/engine[2]/rpm</property>
+		</input>
+	</label>
+
+	<label>
+		<name>FlKg</name>
+		<x>160</x>
+		<y>175</y>
+		<width>50</width>
+		<height>12</height>
+		<format>%3.1f kg</format>
+		<halign>right</halign>
+		<box>false</box>
+		<input>
+			<property>/engines/engine[2]/thrust_lb</property>
+			<factor>0.453592</factor>
+		</input>
+	</label>
+
+	<label>
+		<name>FrRpm</name>
+		<x>240</x>
+		<y>190</y>
+		<width>50</width>
+		<height>12</height>
+		<format>%4.0f RPM</format>
+		<halign>right</halign>
+		<box>true</box>
+		<input>
+			<property>/engines/engine/rpm</property>
+		</input>
+	</label>
+
+	<label>
+		<name>FrKg</name>
+		<x>240</x>
+		<y>175</y>
+		<width>50</width>
+		<height>12</height>
+		<format>%3.1f kg</format>
+		<halign>right</halign>
+		<box>false</box>
+		<input>
+			<property>/engines/engine/thrust_lb</property>
+			<factor>0.453592</factor>
+		</input>
+	</label>
+
+	<label>
+		<name>RlRpm</name>
+		<x>160</x>
+		<y>140</y>
+		<width>50</width>
+		<height>12</height>
+		<format>%4.0f RPM</format>
+		<halign>right</halign>
+		<box>true</box>
+		<input>
+			<property>/engines/engine[1]/rpm</property>
+		</input>
+	</label>
+
+	<label>
+		<name>RlKg</name>
+		<x>160</x>
+		<y>125</y>
+		<width>50</width>
+		<height>12</height>
+		<format>%3.1f kg</format>
+		<halign>right</halign>
+		<box>false</box>
+		<input>
+			<property>/engines/engine[1]/thrust_lb</property>
+			<factor>0.453592</factor>
+		</input>
+	</label>
+
+	<label>
+		<name>RrRpm</name>
+		<x>240</x>
+		<y>140</y>
+		<width>50</width>
+		<height>12</height>
+		<format>%4.0f RPM</format>
+		<halign>right</halign>
+		<box>true</box>
+		<input>
+			<property>/engines/engine[3]/rpm</property>
+		</input>
+	</label>
+
+	<label>
+		<name>RlKg</name>
+		<x>240</x>
+		<y>125</y>
+		<width>50</width>
+		<height>12</height>
+		<format>%3.1f kg</format>
+		<halign>right</halign>
+		<box>false</box>
+		<input>
+			<property>/engines/engine[3]/thrust_lb</property>
+			<factor>0.453592</factor>
+		</input>
+	</label>
+
+</PropertyList>

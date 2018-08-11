@@ -20,12 +20,12 @@
 	<vtailarea unit="FT2">  1.0 </vtailarea>
 	<vtailarm  unit="FT" >  0.1 </vtailarm>
 	<location name="AERORP" unit="M">
-		<x> 0.92</x>
+		<x> 0.99</x>
 		<y> 0</y>
 		<z> 0</z>
 	</location>
 	<location name="EYEPOINT" unit="M">
-		<x> 0.9</x>
+		<x> 0.99</x>
 		<y> 0.0</y>
 		<z> 0.0</z>
 	</location>
@@ -38,11 +38,14 @@
 
 <mass_balance>
 	<ixx unit="KG*M2"> 7.26</ixx>
+	<ixy unit="KG*M2"> 0.05</ixy>
+	<ixz unit="KG*M2"> 1.69</ixz>
 	<iyy unit="KG*M2">17.63</iyy>
+	<iyz unit="KG*M2"> 0.01</iyz>
 	<izz unit="KG*M2">23.81</izz>
 	<emptywt unit="KG">34.90</emptywt>
 	<location name="CG" unit="M">
-		<x> 0.92</x>
+		<x> 0.99</x>
 		<y> 0</y>
 		<z> 0</z>
 	</location>
@@ -200,7 +203,7 @@
 
 <!-- ****************************** PROPULSION ***************************** -->
 <propulsion>
-	<engine file="eng"> 		<!-- ESC 1: front right, CCW -->
+	<engine file="xm9025hd-6"> 		<!-- ESC 1: front right, CCW -->
 		<location unit="M">
 			<x> 0.312</x>
 			<y> 0.749</y>
@@ -211,7 +214,7 @@
 			<roll>  0</roll>
 			<yaw>   0</yaw>
 		</orient>
-		<thruster file="frontprop">
+		<thruster file="xoar-29x9.5">
 			<sense>1</sense>
 			<location unit="M">
 				<x> 0.312</x>
@@ -226,7 +229,7 @@
 		</thruster>
 	</engine>
 
-	<engine file="eng"> 		<!-- ESC 2: rear left, CCW -->
+	<engine file="xm9025hd-6"> 		<!-- ESC 2: rear left, CCW -->
 		<location unit="M">
 			<x> 2.077</x>
 			<y>-0.518</y>
@@ -237,7 +240,7 @@
 			<roll>  0</roll>
 			<yaw>   0</yaw>
 		</orient>
-		<thruster file="rearprop">
+		<thruster file="xoar-26x14">
 			<sense>1</sense>
 			<location unit="M">
 				<x> 2.077</x>
@@ -252,7 +255,7 @@
 		</thruster>
 	</engine>
 
-	<engine file="eng"> 		<!-- ESC 3: front left, CW -->
+	<engine file="xm9025hd-6"> 		<!-- ESC 3: front left, CW -->
 		<location unit="M">
 			<x> 0.312</x>
 			<y>-0.749</y>
@@ -263,7 +266,7 @@
 			<roll>  0</roll>
 			<yaw>   0</yaw>
 		</orient>
-		<thruster file="frontprop">
+		<thruster file="xoar-29x9.5">
 			<sense>-1</sense>
 			<location unit="M">
 				<x> 0.312</x>
@@ -278,7 +281,7 @@
 		</thruster>
 	</engine>
 
-	<engine file="eng"> 		<!-- ESC 4: rear right, CW -->
+	<engine file="xm9025hd-6"> 		<!-- ESC 4: rear right, CW -->
 		<location unit="M">
 			<x> 2.077</x>
 			<y> 0.518</y>
@@ -289,7 +292,7 @@
 			<roll>  0</roll>
 			<yaw>   0</yaw>
 		</orient>
-		<thruster file="rearprop">
+		<thruster file="xoar-26x14">
 			<sense>-1</sense>
 			<location unit="M">
 				<x> 2.077</x>
@@ -308,6 +311,45 @@
 
 <!-- *************************** CONTROLS ********************************** -->
 <flight_control name="FCS: kentavros">
+	<!--channel name="Thrust">
+		<fcs_function name="fcs/throttle-cmd-sqrt">
+			<function>
+				<product>
+					<property>fcs/throttle-cmd-norm</property>
+					<property>fcs/throttle-cmd-norm</property>
+				</product>
+			</function>
+			<output>fcs/throttle-pos-norm</output>
+		</fcs_function>
+		<fcs_function name="fcs/throttle-cmd-sqrt[1]">
+			<function>
+				<product>
+					<property>fcs/throttle-cmd-norm[1]</property>
+					<property>fcs/throttle-cmd-norm[1]</property>
+				</product>
+			</function>
+			<output>fcs/throttle-pos-norm[1]</output>
+		</fcs_function>
+		<fcs_function name="fcs/throttle-cmd-sqrt[2]">
+			<function>
+				<product>
+					<property>fcs/throttle-cmd-norm[2]</property>
+					<property>fcs/throttle-cmd-norm[2]</property>
+				</product>
+			</function>
+			<output>fcs/throttle-pos-norm[2]</output>
+		</fcs_function>
+		<fcs_function name="fcs/throttle-cmd-sqrt[3]">
+			<function>
+				<product>
+					<property>fcs/throttle-cmd-norm[3]</property>
+					<property>fcs/throttle-cmd-norm[3]</property>
+				</product>
+			</function>
+			<output>fcs/throttle-pos-norm[3]</output>
+		</fcs_function>
+	</channel-->
+
 	<channel name="Yaw">
 		<kinematic name="fcs/nacelle-cmd-norm-filtered">
 			<input>fcs/nacelle-cmd-norm</input>

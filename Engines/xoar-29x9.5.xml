@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<propeller name="kentavros-rearprop">
-	<ixx unit="KG*M2">  0.001 </ixx>
-	<diameter unit="M"> 0.5 </diameter>
+<propeller name="xoar-29x9.5">
+	<ixx unit="KG*M2"> 0.001 </ixx> <!-- mass = 105 g -->
+	<diameter unit="M"> 0.737 </diameter>
 	<numblades> 2 </numblades>
 	<gearratio> 1 </gearratio>
-	<minpitch> 10.0 </minpitch>
-	<maxpitch> 10.0 </maxpitch>
+	<minpitch> 9.5 </minpitch>
+	<maxpitch> 9.5 </maxpitch>
 	<constspeed> 0 </constspeed>
-	<ct_factor> 0.24 </ct_factor>
-	<cp_factor> 0.14 </cp_factor>
+	<ct_factor> 0.083 </ct_factor>
+	<cp_factor> 0.044 </cp_factor>
 	
 	<!-- thrust coefficient as a function of advance ratio and blade angle -->
 	<table name="C_THRUST" type="internal">
