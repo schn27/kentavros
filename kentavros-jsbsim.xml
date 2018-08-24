@@ -37,12 +37,12 @@
 </metrics>
 
 <mass_balance>
-	<ixx unit="KG*M2"> 7.26</ixx>
+	<ixx unit="KG*M2"> 7.26</ixx> <!--  7.26 plane,  7.73 plane+stand -->
 	<ixy unit="KG*M2"> 0.05</ixy>
 	<ixz unit="KG*M2"> 1.69</ixz>
-	<iyy unit="KG*M2">17.63</iyy>
+	<iyy unit="KG*M2">17.63</iyy> <!-- 17.63 plane, 18.09 plane+stand -->
 	<iyz unit="KG*M2"> 0.01</iyz>
-	<izz unit="KG*M2">23.81</izz>
+	<izz unit="KG*M2">23.81</izz> <!-- 23.81 plane, 24.73 plane+stand -->
 	<emptywt unit="KG">34.90</emptywt>
 	<location name="CG" unit="M">
 		<x> 0.99</x>
