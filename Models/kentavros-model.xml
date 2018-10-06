@@ -3,6 +3,69 @@
 
 <path>kentavros-model.ac</path>
 
+<!-- surfaces -->
+
+<animation>
+	<type>rotate</type>
+	<object-name>aileron.l</object-name>
+	<property>/fdm/jsbsim/fcs/left-aileron-pos-deg</property>
+	<axis>
+		<x1-m> 1.622</x1-m>
+		<y1-m>-1.364</y1-m>
+		<z1-m> 0.018</z1-m>
+		<x2-m> 1.432</x2-m>
+		<y2-m>-0.475</y2-m>
+		<z2-m> 0.024</z2-m>
+	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>aileron.r</object-name>
+	<property>/fdm/jsbsim/fcs/right-aileron-pos-deg</property>
+	<axis>
+		<x1-m> 1.432</x1-m>
+		<y1-m> 0.475</y1-m>
+		<z1-m> 0.024</z1-m>
+		<x2-m> 1.622</x2-m>
+		<y2-m> 1.364</y2-m>
+		<z2-m> 0.018</z2-m>
+	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>elevators</object-name>
+	<property>/fdm/jsbsim/fcs/elevator-pos-deg</property>
+	<center>
+		<x-m> 0.337</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.054</z-m>
+	</center>
+	<axis>
+		<x> 0</x>
+		<y> 1</y>
+		<z> 0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>flaps</object-name>
+	<property>/fdm/jsbsim/fcs/flap-pos-deg</property>
+	<center>
+		<x-m> 1.430</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.027</z-m>
+	</center>
+	<axis>
+		<x> 0</x>
+		<y> 1</y>
+		<z> 0</z>
+	</axis>
+</animation>
+
+
 <!-- front right nacelle -->
 
 <animation>
