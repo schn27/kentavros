@@ -9,7 +9,7 @@
 		<FDM type="int">3</FDM>
 		<systems type="int">0</systems>
 		<cockpit type="int">0</cockpit>
-		<model type="int">3</model>
+		<model type="int">4</model>
 	</rating>
 	<startup>
 		<splash-texture>Aircraft/kentavros/kentavros.png</splash-texture>
