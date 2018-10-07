@@ -309,46 +309,126 @@
 
 <!-- *************************** CONTROLS ********************************** -->
 <flight_control name="FCS: kentavros">
-	<!--channel name="Thrust">
-		<fcs_function name="fcs/throttle-cmd-sqrt">
-			<function>
-				<product>
-					<property>fcs/throttle-cmd-norm</property>
-					<property>fcs/throttle-cmd-norm</property>
-				</product>
-			</function>
-			<output>fcs/throttle-pos-norm</output>
-		</fcs_function>
-		<fcs_function name="fcs/throttle-cmd-sqrt[1]">
-			<function>
-				<product>
-					<property>fcs/throttle-cmd-norm[1]</property>
-					<property>fcs/throttle-cmd-norm[1]</property>
-				</product>
-			</function>
-			<output>fcs/throttle-pos-norm[1]</output>
-		</fcs_function>
-		<fcs_function name="fcs/throttle-cmd-sqrt[2]">
-			<function>
-				<product>
-					<property>fcs/throttle-cmd-norm[2]</property>
-					<property>fcs/throttle-cmd-norm[2]</property>
-				</product>
-			</function>
-			<output>fcs/throttle-pos-norm[2]</output>
-		</fcs_function>
-		<fcs_function name="fcs/throttle-cmd-sqrt[3]">
-			<function>
-				<product>
-					<property>fcs/throttle-cmd-norm[3]</property>
-					<property>fcs/throttle-cmd-norm[3]</property>
-				</product>
-			</function>
-			<output>fcs/throttle-pos-norm[3]</output>
-		</fcs_function>
-	</channel-->
+	<channel name="Roll">
+		<summer name="fcs/left-aileron-cmd-norm">
+			<input>fcs/aileron-cmd-norm</input>
+			<bias>-0.2</bias>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+		</summer>
+
+		<summer name="fcs/right-aileron-cmd-norm">
+			<input>-fcs/aileron-cmd-norm</input>
+			<bias>-0.2</bias>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+		</summer>
+
+		<kinematic name="Left Aileron Control">
+			<input>fcs/left-aileron-cmd-norm</input>
+			<traverse>
+				<setting>
+					<position>-1</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.1</time>
+				</setting>
+			</traverse>
+			<output>fcs/left-aileron-pos-norm</output>
+		</kinematic>
+
+		<aerosurface_scale name="Left Aileron Scale">
+			<input>fcs/left-aileron-pos-norm</input>
+			<range>
+				<min>-15</min>
+				<max>10</max>
+			</range>
+			<output>fcs/left-aileron-pos-deg</output>
+		</aerosurface_scale>
+
+		<kinematic name="Right Aileron Control">
+			<input>fcs/right-aileron-cmd-norm</input>
+			<traverse>
+				<setting>
+					<position>-1</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.1</time>
+				</setting>
+			</traverse>
+			<output>fcs/right-aileron-pos-norm</output>
+		</kinematic>
+
+		<aerosurface_scale name="Right Aileron Scale">
+			<input>fcs/right-aileron-pos-norm</input>
+			<range>
+				<min>-15</min>
+				<max>10</max>
+			</range>
+			<output>fcs/right-aileron-pos-deg</output>
+		</aerosurface_scale>
+
+	</channel>
+
+	<channel name="Pitch">
+		<kinematic name="Elevator Control">
+			<input>-fcs/elevator-cmd-norm</input>
+			<traverse>
+				<setting>
+					<position>-1</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.1</time>
+				</setting>
+			</traverse>
+			<output>fcs/elevator-pos-norm</output>
+		</kinematic>
+
+		<aerosurface_scale name="Elevator Scale">
+			<input>fcs/elevator-pos-norm</input>
+			<range>
+				<min>-10</min>
+				<max>10</max>
+			</range>
+			<output>fcs/elevator-pos-deg</output>
+		</aerosurface_scale>
+	</channel>
 
 	<channel name="Yaw">
+		<kinematic name="Rudder Control">
+			<input>-fcs/rudder-cmd-norm</input>
+			<traverse>
+				<setting>
+					<position>-1</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.1</time>
+				</setting>
+			</traverse>
+			<output>fcs/rudder-pos-norm</output>
+		</kinematic>
+
+		<aerosurface_scale name="Rudder Scale">
+			<input>fcs/rudder-pos-norm</input>
+			<range>
+				<min>-10</min>
+				<max>10</max>
+			</range>
+			<output>fcs/rudder-pos-deg</output>
+		</aerosurface_scale>
+
 		<kinematic name="fcs/nacelle-cmd-norm-filtered">
 			<input>fcs/nacelle-cmd-norm</input>
 			<traverse>

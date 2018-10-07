@@ -24,6 +24,10 @@
 		<y-offset>180</y-offset>
 	</import>
 
+	<import>
+		<path>Huds/Sets/controls.xml</path>
+	</import>
+
 	<label>
 		<name>GS</name>
 		<x>-280</x>
