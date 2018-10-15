@@ -1440,8 +1440,12 @@
 		<function name="aero/moment/pitchdamp">
 			<description>pitch due to pitch rate</description>
 			<product>
-				<property>velocities/q-aero-rad_sec</property>
-				<value>-0.001</value>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<property>aero/bi2vel</property>
+				<property>velocities/p-aero-rad_sec</property>
+				<value>-0.1</value>
 			</product>
 		</function>
 		<function name="aero/moment/pitch-due-to-alpha-and-flaps">
@@ -1911,8 +1915,12 @@
 		<function name="aero/moment/rolldamp">
 			<description>roll due to roll rate</description>
 			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<property>aero/bi2vel</property>
 				<property>velocities/p-aero-rad_sec</property>
-				<value>-0.002</value>
+				<value>-0.1</value>
 			</product>
 		</function>
 		<function name="aero/moment/roll-due-to-beta">
@@ -2322,8 +2330,12 @@
 		<function name="aero/moment/yawdamp">
 			<description>yaw due to yaw rate</description>
 			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<property>aero/bi2vel</property>
 				<property>velocities/r-aero-rad_sec</property>
-				<value>-0.001</value>
+				<value>-0.01</value>
 			</product>
 		</function>
 		<function name="aero/moment/yaw-due-to-beta">
