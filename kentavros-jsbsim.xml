@@ -541,6 +541,41 @@
 			<output>propulsion/engine[3]/pitch-angle-rad</output>
 		</aerosurface_scale>		
 	</channel>
+
+	<channel name="Flaps">
+		<kinematic name="Flaps Control">
+			<input>fcs/flap-cmd-norm</input>
+			<traverse>
+				<setting>
+					<position>  0 </position>
+					<time>      0 </time>
+				</setting>
+				<setting>
+					<position>  5 </position>
+					<time>      0.3 </time>
+				</setting>
+				<setting>
+					<position> 10 </position>
+					<time>      0.3 </time>
+				</setting>
+			</traverse>
+			<output>fcs/flap-pos-deg</output>
+		</kinematic>
+
+		<aerosurface_scale name="flap normalization">
+			<input>fcs/flap-pos-deg</input>
+			<domain>
+				<min>  0 </min>
+				<max> 30 </max>
+			</domain>
+			<range>
+				<min> 0 </min>
+				<max> 1 </max>
+			</range>
+			<output>fcs/flap-pos-norm</output>
+		</aerosurface_scale>
+	</channel>
+
 </flight_control>
 
 <aerodynamics file="kentavros-aero.xml"/>

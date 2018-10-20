@@ -31,6 +31,12 @@
 		<visibility>false</visibility>
 	</panel>
 
+	<flaps>
+		<setting>0.0</setting>
+		<setting>0.5</setting>
+		<setting>1.0</setting>
+	</flaps>
+
 	<chase-distance-m>-3</chase-distance-m>
 
 	<view n="0">
@@ -89,10 +95,9 @@
 		</config>
 	</view>	
 
-        <!-- HUD Settings -->
-        <hud>
-            <path n="1">Aircraft/kentavros/Hud/HUD.xml</path>
-        </hud>
+	<hud>
+		<path n="1">Aircraft/kentavros/Hud/HUD.xml</path>
+	</hud>
 
 </sim>
 
