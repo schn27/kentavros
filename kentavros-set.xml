@@ -7,7 +7,7 @@
 	<status>development</status>
 	<rating>
 		<FDM type="int">3</FDM>
-		<systems type="int">0</systems>
+		<systems type="int">2</systems>
 		<cockpit type="int">0</cockpit>
 		<model type="int">4</model>
 	</rating>

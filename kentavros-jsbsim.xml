@@ -18,7 +18,7 @@
 	<htailarea unit="M2"> 0.29 </htailarea>
 	<htailarm  unit="M" >-0.76 </htailarm>
 	<location name="AERORP" unit="M">
-		<x> 0.99</x>
+		<x> 1.00</x>
 		<y> 0</y>
 		<z> 0</z>
 	</location>
@@ -43,7 +43,7 @@
 	<izz unit="KG*M2">23.81</izz> <!-- 23.81 plane, 24.73 plane+stand -->
 	<emptywt unit="KG">34.90</emptywt>
 	<location name="CG" unit="M">
-		<x> 0.99</x>
+		<x> 1.00</x>
 		<y> 0</y>
 		<z> 0</z>
 	</location>
