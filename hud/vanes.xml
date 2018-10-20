@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<label>
+		<name>AOA</name>
+		<x>0</x>
+		<y>0</y>
+		<width>1</width>
+		<height>1</height>
+		<halign>center</halign>
+		<input>
+			<property>/orientation/alpha-deg</property>
+		</input>
+		<format>AOA %6.2f</format>
+	</label>
+
+	<label>
+		<name>Slip</name>
+		<x>0</x>
+		<y>-10</y>
+		<width>1</width>
+		<height>1</height>
+		<halign>center</halign>
+		<input>
+			<property>/orientation/side-slip-deg</property>
+		</input>
+		<format>Slip %6.2f</format>
+	</label>
+
+</PropertyList>

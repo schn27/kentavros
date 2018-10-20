@@ -28,6 +28,12 @@
 		<path>Huds/Sets/controls.xml</path>
 	</import>
 
+	<import>
+		<path>Aircraft/kentavros/Hud/vanes.xml</path>
+		<x-offset>0</x-offset>
+		<y-offset>-20</y-offset>
+	</import>
+
 	<label>
 		<name>GS</name>
 		<x>-280</x>
@@ -39,7 +45,7 @@
 		<box>true</box>
 		<input>
 			<property>/velocities/groundspeed-kt</property>
-			<factor>0.514444</factor>
+			<factor>1.852</factor>
 		</input>
 	</label>
 
@@ -69,7 +75,7 @@
 		<tick-length>variable</tick-length>
 		<input>
 			<property>/velocities/airspeed-kt</property>
-			<factor>0.514444</factor>
+			<factor>1.852</factor>
 			<min>0.0</min>
 		</input>
 	</tape>
