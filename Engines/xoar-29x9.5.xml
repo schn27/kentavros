@@ -7,22 +7,36 @@
 	<minpitch> 9.5 </minpitch>
 	<maxpitch> 9.5 </maxpitch>
 	<constspeed> 0 </constspeed>
-	<ct_factor> 0.083 </ct_factor>
-	<cp_factor> 0.044 </cp_factor>
+	<ct_factor> 1.0 </ct_factor>
+	<cp_factor> 1.0 </cp_factor>
 	
 	<!-- thrust coefficient as a function of advance ratio and blade angle -->
 	<table name="C_THRUST" type="internal">
 		<tableData>
-		0.0	1.0
-		1.0	1.0
+0.0	0.083
+0.2	0.063
+0.4	0.013
+0.6	-0.063
+0.8	-0.163
+1.0	-0.286
+1.2	-0.431
+1.5	-0.687
+2.0	-1.214
 		</tableData>
 	</table>
 
 	<!-- power coefficient as a function of advance ratio and blade angle -->
 	<table name="C_POWER" type="internal">
 		<tableData>
-		0.0	1.0
-		1.0	1.0
+0.0	0.044
+0.2	0.042
+0.4	0.028
+0.6	-0.009
+0.8	-0.077
+1.0	-0.186
+1.2	-0.344
+1.5	-0.693
+2.0	-1.64
 		</tableData>
 	</table>
 </propeller>
