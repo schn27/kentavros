@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<filter>
+		<type>gain</type>
+		<gain>0.5</gain>
+		<input>/controls/flight/aileron</input>
+		<reference>0</reference>
+		<output>/autopilot/roll-sp-rad</output>
+	</filter>
+
+	<filter>
+		<type>gain</type>
+		<gain>-2.0</gain>
+		<input>/fdm/jsbsim/attitude/roll-rad</input>
+		<reference>/autopilot/roll-sp-rad</reference>
+		<output>/autopilot/rollrate-sp-rad_sec</output>
+	</filter>
+
+	<pi-simple-controller>
+		<name>Roll rate controller</name>
+		<enabled>true</enabled>
+		<input>
+			<prop>/fdm/jsbsim/velocities/p-rad_sec</prop>
+		</input>
+		<reference>
+			<prop>/autopilot/rollrate-sp-rad_sec</prop>
+			<min>-1</min>
+			<max>1</max>
+		</reference>
+		<output>
+			<prop>/fdm/jsbsim/fcs/aileron-ap-cmd-norm</prop>
+		</output>
+		<config>
+			<Kp>0.6</Kp>
+			<Ki>0.3</Ki>
+			<u_min>-1.0</u_min>
+			<u_max>1.0</u_max>
+		</config>
+	</pi-simple-controller>
+
+	<filter>
+		<type>gain</type>
+		<gain>-0.5</gain>
+		<input>/controls/flight/elevator</input>
+		<reference>0</reference>
+		<output>/autopilot/pitch-sp-rad</output>
+	</filter>
+
+	<filter>
+		<type>gain</type>
+		<gain>-1</gain>
+		<input>/fdm/jsbsim/attitude/pitch-rad</input>
+		<reference>/autopilot/pitch-sp-rad</reference>
+		<output>/autopilot/pitchrate-sp-rad_sec</output>
+	</filter>
+
+	<pi-simple-controller>
+		<name>Pitch rate controller</name>
+		<enabled>true</enabled>
+		<input>
+			<prop>/autopilot/pitchrate-sp-rad_sec</prop>
+			<min>-0.5</min>
+			<max>0.5</max>
+		</input>
+		<reference>
+			<prop>/fdm/jsbsim/velocities/thetadot-rad_sec</prop>
+		</reference>
+		<output>
+			<prop>/fdm/jsbsim/fcs/elevator-ap-cmd-norm</prop>
+		</output>
+		<config>
+			<Kp>0.8</Kp>
+			<Ki>3.0</Ki>
+			<u_min>-1.0</u_min>
+			<u_max>1.0</u_max>
+		</config>
+	</pi-simple-controller>
+
+	<filter>
+		<type>high-pass</type>
+		<filter-time>0.5</filter-time>
+		<input>/fdm/jsbsim/velocities/r-rad_sec</input>
+		<output>/autopilot/yawrate-filtered-rad_sec</output>
+	</filter>
+
+	<filter>
+		<type>gain</type>
+		<gain>3</gain>
+		<input>/autopilot/yawrate-filtered-rad_sec</input>
+		<reference>0</reference>
+		<output>/fdm/jsbsim/fcs/rudder-ap-cmd-norm</output>
+	</filter>
+</PropertyList>

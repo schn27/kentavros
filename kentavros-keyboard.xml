@@ -51,4 +51,24 @@
 	</binding>
 </key>
 
+<key n="97">
+	<name>a</name>
+	<desc>Engage autopilot</desc>
+	<binding>
+		<command>property-assign</command>
+		<property>/fdm/jsbsim/fcs/ap-enabled</property>
+		<value type="double">1</value>
+	</binding>
+</key>
+
+<key n="65">
+	<name>A</name>
+	<desc>Disengage autopilot</desc>
+	<binding>
+		<command>property-assign</command>
+		<property>/fdm/jsbsim/fcs/ap-enabled</property>
+		<value type="double">0</value>
+	</binding>
+</key>
+
 </PropertyList>

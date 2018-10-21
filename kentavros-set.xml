@@ -25,6 +25,10 @@
 		<electrical>
 			<path>Aircraft/kentavros/electrical.xml</path>
 		</electrical>
+
+		<autopilot n="100">
+			<path>Aircraft/kentavros/kentavros-ap.xml</path>
+		</autopilot>
 	</systems>
 
 	<panel>

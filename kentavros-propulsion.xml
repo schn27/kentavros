@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<propulsion>
+	<engine file="xm9025hd-6"> 		<!-- ESC 1: front right, CCW -->
+		<location unit="M">
+			<x> 0.312</x>
+			<y> 0.749</y>
+			<z> 0.054</z>
+		</location>
+		<orient unit="DEG">
+			<pitch> 0</pitch>
+			<roll>  0</roll>
+			<yaw>   0</yaw>
+		</orient>
+		<thruster file="xoar-29x9.5">
+			<sense>1</sense>
+			<location unit="M">
+				<x> 0.312</x>
+				<y> 0.749</y>
+				<z> 0.054</z>
+			</location>
+			<orient unit="DEG">
+				<pitch> 90</pitch>
+				<roll>   0</roll>
+				<yaw>    0</yaw>
+			</orient>
+		</thruster>
+	</engine>
+
+	<engine file="xm9025hd-6"> 		<!-- ESC 2: rear left, CCW -->
+		<location unit="M">
+			<x> 2.077</x>
+			<y>-0.518</y>
+			<z> 0.093</z>
+		</location>
+		<orient unit="DEG">
+			<pitch> 0</pitch>
+			<roll>  0</roll>
+			<yaw>   0</yaw>
+		</orient>
+		<thruster file="xoar-26x14">
+			<sense>1</sense>
+			<location unit="M">
+				<x> 2.077</x>
+				<y>-0.518</y>
+				<z> 0.093</z>
+			</location>
+			<orient unit="DEG">
+				<pitch> 90</pitch>
+				<roll>   0</roll>
+				<yaw>    0</yaw>
+			</orient>
+		</thruster>
+	</engine>
+
+	<engine file="xm9025hd-6"> 		<!-- ESC 3: front left, CW -->
+		<location unit="M">
+			<x> 0.312</x>
+			<y>-0.749</y>
+			<z> 0.054</z>
+		</location>
+		<orient unit="DEG">
+			<pitch> 0</pitch>
+			<roll>  0</roll>
+			<yaw>   0</yaw>
+		</orient>
+		<thruster file="xoar-29x9.5">
+			<sense>-1</sense>
+			<location unit="M">
+				<x> 0.312</x>
+				<y>-0.749</y>
+				<z> 0.054</z>
+			</location>
+			<orient unit="DEG">
+				<pitch> 90</pitch>
+				<roll>   0</roll>
+				<yaw>    0</yaw>
+			</orient>
+		</thruster>
+	</engine>
+
+	<engine file="xm9025hd-6"> 		<!-- ESC 4: rear right, CW -->
+		<location unit="M">
+			<x> 2.077</x>
+			<y> 0.518</y>
+			<z> 0.093</z>
+		</location>
+		<orient unit="DEG">
+			<pitch> 0</pitch>
+			<roll>  0</roll>
+			<yaw>   0</yaw>
+		</orient>
+		<thruster file="xoar-26x14">
+			<sense>-1</sense>
+			<location unit="M">
+				<x> 2.077</x>
+				<y> 0.518</y>
+				<z> 0.093</z>
+			</location>
+			<orient unit="DEG">
+				<pitch> 90</pitch>
+				<roll>   0</roll>
+				<yaw>    0</yaw>
+			</orient>
+		</thruster>
+	</engine>
+</propulsion>
