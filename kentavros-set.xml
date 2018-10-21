@@ -117,9 +117,13 @@
 </engines>
 
 <nasal>
-	<nacelles>
-		<file>Aircraft/kentavros/Nasal/nacelles.nas</file>
-	</nacelles>
+	<kentavros>
+		<file>Nasal/nacelles.nas</file>
+	</kentavros>
 </nasal>
+
+<input>
+	<keyboard include="kentavros-keyboard.xml"/>
+</input>
 
 </PropertyList>

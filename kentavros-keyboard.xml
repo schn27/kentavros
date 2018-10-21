@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+<key n="123">
+	<name>{</name>
+	<desc>Set nacelles horizotal</desc>
+	<binding>
+		<command>property-assign</command>
+		<property>/controls/nacelles/nacelle</property>
+		<value type="double">1</value>
+	</binding>
+	<binding>
+		<command>property-assign</command>
+		<property>/controls/nacelles/nacelle[1]</property>
+		<value type="double">1</value>
+	</binding>
+	<binding>
+		<command>property-assign</command>
+		<property>/controls/nacelles/nacelle[2]</property>
+		<value type="double">1</value>
+	</binding>
+	<binding>
+		<command>property-assign</command>
+		<property>/controls/nacelles/nacelle[3]</property>
+		<value type="double">1</value>
+	</binding>
+</key>
+
+<key n="125">
+	<name>}</name>
+	<desc>Set nacelles vertical</desc>
+	<binding>
+		<command>property-assign</command>
+		<property>/controls/nacelles/nacelle</property>
+		<value type="double">0</value>
+	</binding>
+	<binding>
+		<command>property-assign</command>
+		<property>/controls/nacelles/nacelle[1]</property>
+		<value type="double">0</value>
+	</binding>
+	<binding>
+		<command>property-assign</command>
+		<property>/controls/nacelles/nacelle[2]</property>
+		<value type="double">0</value>
+	</binding>
+	<binding>
+		<command>property-assign</command>
+		<property>/controls/nacelles/nacelle[3]</property>
+		<value type="double">0</value>
+	</binding>
+</key>
+
+</PropertyList>
