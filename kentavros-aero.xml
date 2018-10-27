@@ -468,10 +468,12 @@
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
-				<table>
-					<independentVar lookup="row">aero/alpha-deg</independentVar>
-					<independentVar lookup="column">fcs/flap-pos-deg</independentVar>
-					<tableData>
+				<sum>
+					<value>0.05</value> <!-- added manualy to take body and gear into account -->
+					<table>
+						<independentVar lookup="row">aero/alpha-deg</independentVar>
+						<independentVar lookup="column">fcs/flap-pos-deg</independentVar>
+						<tableData>
                0         15         30
 -25.0   0.178777   0.189859   0.162468
 -24.5   0.171890   0.182783   0.156068
@@ -572,8 +574,9 @@
  23.0   0.238433   0.289831   0.360988
  23.5   0.247566   0.297867   0.368884
  24.0   0.251458   0.305956   0.376752
-					</tableData>
-				</table>
+						</tableData>
+					</table>
+				</sum>
 			</product>
 		</function>
 

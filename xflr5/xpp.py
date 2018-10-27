@@ -143,18 +143,21 @@ print('			<description>drag due to alpha and flaps</description>')
 print('			<product>')
 print('				<property>aero/qbar-psf</property>')
 print('				<property>metrics/Sw-sqft</property>')
-print('				<table>')
-print('					<independentVar lookup="row">aero/alpha-deg</independentVar>')
-print('					<independentVar lookup="column">fcs/flap-pos-deg</independentVar>')
-print('					<tableData>')
+print('				<sum>')
+print('					<value>0.05</value> <!-- added manualy to take body and gear into account -->')
+print('					<table>')
+print('						<independentVar lookup="row">aero/alpha-deg</independentVar>')
+print('						<independentVar lookup="column">fcs/flap-pos-deg</independentVar>')
+print('						<tableData>')
 
 print("      %10d %10d %10d" % (0, 15, 30))
 for i in range(len(base["alpha"])):
 	print("%5.1f %10.6f %10.6f %10.6f" % 
 		(base["alpha"][i], base["CD"][i], flaps15["CD"][i], flaps30["CD"][i]))
 
-print('					</tableData>')
-print('				</table>')
+print('						</tableData>')
+print('					</table>')
+print('				</sum>')
 print('			</product>')
 print('		</function>\n')
 
