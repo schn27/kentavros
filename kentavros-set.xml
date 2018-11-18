@@ -105,24 +105,10 @@
 
 </sim>
 
-<engines>
-	<engine>
-		<rpm type="double">400</rpm>
-	</engine>
-	<engine n="1">
-		<rpm type="double">400</rpm>
-	</engine>
-	<engine n="2">
-		<rpm type="double">400</rpm>
-	</engine>
-	<engine n="3">
-		<rpm type="double">400</rpm>
-	</engine>
-</engines>
-
 <nasal>
 	<kentavros>
 		<file>Nasal/nacelles.nas</file>
+		<file>Nasal/rpm-watchdog.nas</file>
 	</kentavros>
 </nasal>
 
