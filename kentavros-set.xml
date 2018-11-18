@@ -109,6 +109,7 @@
 	<kentavros>
 		<file>Nasal/nacelles.nas</file>
 		<file>Nasal/rpm-watchdog.nas</file>
+		<file>Nasal/tower.nas</file>
 	</kentavros>
 </nasal>
 
