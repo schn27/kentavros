@@ -52,7 +52,7 @@
 <ground_reactions file="kentavros-gnd.xml" />
 <propulsion file="kentavros-propulsion.xml" />
 <flight_control file="kentavros-fcs.xml" />
-<aerodynamics file="kentavros-aero.xml" />
+<aerodynamics file="kentavros-no-twist-aero.xml" />
 
 <!--output name="kentavros.csv" type="CSV" rate="60">
 	<rates> ON </rates>
