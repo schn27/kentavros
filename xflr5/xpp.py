@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import io
+import sys
 
 def loadFile(fileName):
 	with open(fileName, "r") as file:
@@ -24,17 +25,19 @@ def loadFile(fileName):
 
 	return data
 
-base = loadFile(u"polars/base_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
-baseBeta = loadFile(u"polars/base_T5-a0_0°-30_0m_s-VLM2-34_9kg-x0_0mm-TG.txt")
-elevatorMinus10 = loadFile(u"polars/elevator -10_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
-elevatorPlus10 = loadFile(u"polars/elevator 10_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
-flaps15 = loadFile(u"polars/flaps 15_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
-flaps30 = loadFile(u"polars/flaps 30_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
-leftAileronMinus12 = loadFile(u"polars/left aileron -12_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
-leftAileronMinus5 = loadFile(u"polars/left aileron -5_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
-leftAileronPlus10 = loadFile(u"polars/left aileron 10_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
-leftAileronPlus5 = loadFile(u"polars/left aileron 5_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
-rudder10 = loadFile(u"polars/rudder 10_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+root = sys.argv[1] + "/";
+
+base = loadFile(root + u"base_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+baseBeta = loadFile(root + u"base_T5-a0_0°-30_0m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+elevatorMinus10 = loadFile(root + u"elevator -10_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+elevatorPlus10 = loadFile(root + u"elevator 10_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+flaps15 = loadFile(root + u"flaps 15_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+flaps30 = loadFile(root + u"flaps 30_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+leftAileronMinus12 = loadFile(root + u"left aileron -12_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+leftAileronMinus5 = loadFile(root + u"left aileron -5_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+leftAileronPlus10 = loadFile(root + u"left aileron 10_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+leftAileronPlus5 = loadFile(root + u"left aileron 5_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
+rudder10 = loadFile(root + u"rudder 10_T1-30_0 m_s-VLM2-34_9kg-x0_0mm-TG.txt")
 
 print('<?xml version="1.0"?>')
 print('<aerodynamics>\n')

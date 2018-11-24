@@ -1,2 +1,2 @@
 @echo off
-xpp.py > ../kentavros-aero.xml
+xpp.py polars > ../kentavros-aero.xml
