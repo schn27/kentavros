@@ -135,7 +135,7 @@
 		</switch>
 
 		<kinematic name="Rudder Control">
-			<input>-fcs/int-rudder</input>
+			<input>fcs/int-rudder</input>
 			<traverse>
 				<setting>
 					<position>-1</position>
