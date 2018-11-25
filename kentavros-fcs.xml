@@ -1,38 +1,50 @@
 <?xml version="1.0"?>
 <flight_control>
 	<property>fcs/ap-enabled</property>
-	<property>fcs/aileron-ap-cmd-norm</property>
-	<property>fcs/elevator-ap-cmd-norm</property>
-	<property>fcs/rudder-ap-cmd-norm</property>
+	<property>fcs/ap-aileron</property>
+	<property>fcs/ap-elevator</property>
+	<property>fcs/ap-rudder</property>
 
 	<channel name="Roll">
-		<switch name="fcs/aileron-int-cmd-norm">
-			<default value="fcs/aileron-cmd-norm" />
-			<test value="fcs/aileron-ap-cmd-norm">
+		<summer name="fcs/ap-left-aileron">
+			<input>fcs/ap-aileron</input>
+			<bias>-0.2</bias>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+		</summer>
+
+		<summer name="fcs/ap-right-aileron">
+			<input>-fcs/ap-aileron</input>
+			<bias>-0.2</bias>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+		</summer>
+
+		<switch name="fcs/int-left-aileron">
+			<default value="fcs/ext-left-aileron" />
+			<test value="fcs/ap-left-aileron">
 				fcs/ap-enabled == 1
 			</test>
 		</switch>
 
-		<summer name="fcs/left-aileron-cmd-norm">
-			<input>fcs/aileron-int-cmd-norm</input>
-			<bias>-0.2</bias>
-			<clipto>
-				<min>-1</min>
-				<max>1</max>
-			</clipto>
-		</summer>
+		<switch name="fcs/int-right-aileron">
+			<default value="fcs/ext-right-aileron" />
+			<test value="fcs/ap-right-aileron">
+				fcs/ap-enabled == 1
+			</test>
+		</switch>
 
-		<summer name="fcs/right-aileron-cmd-norm">
-			<input>-fcs/aileron-int-cmd-norm</input>
-			<bias>-0.2</bias>
-			<clipto>
-				<min>-1</min>
-				<max>1</max>
-			</clipto>
+		<summer name="fcs/int-aileron-diff">
+			<input>fcs/int-left-aileron</input>
+			<input>-fcs/int-right-aileron</input>
 		</summer>
 
 		<kinematic name="Left Aileron Control">
-			<input>fcs/left-aileron-cmd-norm</input>
+			<input>fcs/int-left-aileron</input>
 			<traverse>
 				<setting>
 					<position>-1</position>
@@ -56,7 +68,7 @@
 		</aerosurface_scale>
 
 		<kinematic name="Right Aileron Control">
-			<input>fcs/right-aileron-cmd-norm</input>
+			<input>fcs/int-right-aileron</input>
 			<traverse>
 				<setting>
 					<position>-1</position>
@@ -82,15 +94,15 @@
 	</channel>
 
 	<channel name="Pitch">
-		<switch name="fcs/elevator-int-cmd-norm">
-			<default value="fcs/elevator-cmd-norm" />
-			<test value="fcs/elevator-ap-cmd-norm">
+		<switch name="fcs/int-elevator">
+			<default value="fcs/ext-elevator" />
+			<test value="fcs/ap-elevator">
 				fcs/ap-enabled == 1
 			</test>
 		</switch>
 
 		<kinematic name="Elevator Control">
-			<input>-fcs/elevator-int-cmd-norm</input>
+			<input>-fcs/int-elevator</input>
 			<traverse>
 				<setting>
 					<position>-1</position>
@@ -115,17 +127,15 @@
 	</channel>
 
 	<channel name="Yaw">
-		<summer name="fcs/rudder-int-cmd-norm">
-			<input>fcs/rudder-ap-cmd-norm</input>>
-			<input>fcs/rudder-cmd-norm</input>
-			<clipto>
-				<min>-1</min>
-				<max>1</max>
-			</clipto>
-		</summer>
+		<switch name="fcs/int-rudder">
+			<default value="fcs/ext-rudder" />
+			<test value="fcs/ap-rudder">
+				fcs/ap-enabled == 1
+			</test>
+		</switch>
 
 		<kinematic name="Rudder Control">
-			<input>-fcs/rudder-int-cmd-norm</input>
+			<input>-fcs/int-rudder</input>
 			<traverse>
 				<setting>
 					<position>-1</position>
@@ -150,8 +160,8 @@
 	</channel>
 
 	<channel name="Nacelles">
-		<kinematic name="fcs/nacelle-cmd-norm-filtered">
-			<input>fcs/nacelle-cmd-norm</input>
+		<kinematic name="fcs/nacelle-filtered">
+			<input>fcs/nacelle</input>
 			<traverse>
 				<setting>
 					<position>0</position>
@@ -165,7 +175,7 @@
 		</kinematic>
 
 		<aerosurface_scale name="fcs/nacelle-angle-rad">
-			<input>fcs/nacelle-cmd-norm-filtered</input>
+			<input>fcs/nacelle-filtered</input>
 			<zero_centered>false</zero_centered>
 			<domain>
 				<min>0</min>
@@ -178,8 +188,8 @@
 			<output>propulsion/engine/pitch-angle-rad</output>
 		</aerosurface_scale>
 
-		<kinematic name="fcs/nacelle-cmd-norm-filtered[1]">
-			<input>fcs/nacelle-cmd-norm[1]</input>
+		<kinematic name="fcs/nacelle-filtered[1]">
+			<input>fcs/nacelle[1]</input>
 			<traverse>
 				<setting>
 					<position>0</position>
@@ -193,7 +203,7 @@
 		</kinematic>
 
 		<aerosurface_scale name="fcs/nacelle-angle-rad[1]">
-			<input>fcs/nacelle-cmd-norm-filtered[1]</input>
+			<input>fcs/nacelle-filtered[1]</input>
 			<zero_centered>false</zero_centered>
 			<domain>
 				<min>0</min>
@@ -206,8 +216,8 @@
 			<output>propulsion/engine[1]/pitch-angle-rad</output>
 		</aerosurface_scale>
 
-		<kinematic name="fcs/nacelle-cmd-norm-filtered[2]">
-			<input>fcs/nacelle-cmd-norm[2]</input>
+		<kinematic name="fcs/nacelle-filtered[2]">
+			<input>fcs/nacelle[2]</input>
 			<traverse>
 				<setting>
 					<position>0</position>
@@ -221,7 +231,7 @@
 		</kinematic>
 
 		<aerosurface_scale name="fcs/nacelle-angle-rad[2]">
-			<input>fcs/nacelle-cmd-norm-filtered[2]</input>
+			<input>fcs/nacelle-filtered[2]</input>
 			<zero_centered>false</zero_centered>
 			<domain>
 				<min>0</min>
@@ -234,8 +244,8 @@
 			<output>propulsion/engine[2]/pitch-angle-rad</output>
 		</aerosurface_scale>
 
-		<kinematic name="fcs/nacelle-cmd-norm-filtered[3]">
-			<input>fcs/nacelle-cmd-norm[3]</input>
+		<kinematic name="fcs/nacelle-filtered[3]">
+			<input>fcs/nacelle[3]</input>
 			<traverse>
 				<setting>
 					<position>0</position>
@@ -249,7 +259,7 @@
 		</kinematic>
 
 		<aerosurface_scale name="fcs/nacelle-angle-rad[3]">
-			<input>fcs/nacelle-cmd-norm-filtered[3]</input>
+			<input>fcs/nacelle-filtered[3]</input>
 			<zero_centered>false</zero_centered>
 			<domain>
 				<min>0</min>

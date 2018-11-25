@@ -1,5 +1,5 @@
 var inputPath = "/controls/nacelles/nacelle";
-var outputPath = "/fdm/jsbsim/fcs/nacelle-cmd-norm";
+var outputPath = "/fdm/jsbsim/fcs/nacelle";
 
 var getIndexedPath = func(path, index) {
 	if (index == 0) {

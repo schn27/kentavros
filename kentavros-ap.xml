@@ -28,7 +28,7 @@
 			<max>1</max>
 		</reference>
 		<output>
-			<prop>/fdm/jsbsim/fcs/aileron-ap-cmd-norm</prop>
+			<prop>/fdm/jsbsim/fcs/ap-aileron</prop>
 		</output>
 		<config>
 			<Kp>0.6</Kp>
@@ -66,7 +66,7 @@
 			<prop>/fdm/jsbsim/velocities/thetadot-rad_sec</prop>
 		</reference>
 		<output>
-			<prop>/fdm/jsbsim/fcs/elevator-ap-cmd-norm</prop>
+			<prop>/fdm/jsbsim/fcs/ap-elevator</prop>
 		</output>
 		<config>
 			<Kp>0.8</Kp>
@@ -88,6 +88,6 @@
 		<gain>3</gain>
 		<input>/autopilot/yawrate-filtered-rad_sec</input>
 		<reference>0</reference>
-		<output>/fdm/jsbsim/fcs/rudder-ap-cmd-norm</output>
+		<output>/fdm/jsbsim/fcs/ap-rudder</output>
 	</filter>
 </PropertyList>
